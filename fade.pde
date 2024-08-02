@@ -1,44 +1,39 @@
-
+int drawCount = 0;
+int maxDraws = 15;  // Set this to the number of times you want to draw the objects
 
 void setup() {
-
   size(900, 900);
   background(0, 255, 255,10);
 }
 
 void draw() {
+  if (drawCount < maxDraws) {
+    for (int x = 50; x < width - x; x += 140) {
+      fill(225, 225, 0, 10);
 
+      // Diagonal top left
+      circle(x, x, x);
+      // Diagonal top right
+      circle(width - x, x, x);
+      // Diagonal bottom left
+      circle(x, height - x, x);
+      // Diagonal bottom right
+      circle(width - x, height - x, x);
+    }
 
-  for (var x=75; x<width-x; x+=200) {
-    
-    //boolean shapeDrawn = false;
-    
+    for (int x = 70; x < width - x; x += 150) {
+      fill(255, 0, 255, 10);
 
-    fill(225, 225, 0, 10);
+      // Center left
+      circle(width / 2 + x, height / 2, x);
+      // Center right
+      circle(width / 2 - x, height / 2, x);
+      // Center top
+      circle(width / 2, height / 2 - x, x);
+      // Center bottom
+      circle(width / 2, height / 2 + x, x);
+    }
 
-    //diag top left
-    circle(x, x, x);    
-    //diag top right
-    circle(width-x, x, x);
-    //diag bot left
-    circle(x, height-x, x);
-    //diag bot right
-    circle(width-x, height-x, x);
+    drawCount++;
   }
-
-
-  for (var x=75; x<width-x; x+=100) {
-
-    fill(255, 0, 255, 10);
-
-    //center left
-    circle(width/2+x, height/2, x);
-    //center right
-    circle(width/2-x, height/2, x);
-    //center top
-    circle(width/2, height/2-x, x);
-    //center bot
-    circle(width/2, height/2+x, x);
-  }
- 
 }
